@@ -2,10 +2,8 @@
   <header>
     <HeaderComponent />
   </header>
-  <main style="min-height: 500px">
-    <transition name="fade">
-      <router-view />
-    </transition>
+  <main style="min-height: 100px">
+    <router-view />
   </main>
   <footer>
     <FooterComponent />
