@@ -53,3 +53,17 @@ export default {
   },
 };
 </script>
+<style>
+.slicknav_btn {
+    background-color: transparent !important;    
+    margin-bottom: -25px;
+    z-index: 99;     
+    margin-top: -5px;
+}
+.slicknav_menutxt {
+  display: none !important;
+}
+.slicknav_icon-bar{
+  font-size: 1.5rem;
+}
+</style>

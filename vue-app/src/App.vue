@@ -16,8 +16,9 @@
 <script>
 import $ from "jquery";
 
-import "slick-carousel/slick/slick.css";
+import "slicknav/dist/slicknav.css";
 import "animate.css";
+import "slick-carousel/slick/slick.css";
 
 export default {
   data() {
@@ -35,6 +36,5 @@ export default {
 </script>
 <style lang="scss">
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "node_modules/slicknav/scss/slicknav.scss";
 @import "assets/scss/style.scss";
 </style>
