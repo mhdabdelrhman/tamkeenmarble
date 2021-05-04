@@ -15,6 +15,10 @@
 </template>
 <script>
 import $ from "jquery";
+
+import "slick-carousel/slick/slick.css";
+import "animate.css";
+
 export default {
   data() {
     return {

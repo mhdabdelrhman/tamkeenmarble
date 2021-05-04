@@ -1,9 +1,15 @@
 <template>
-  <div class="home" style="background-color: black; height:100vh"></div>
+  <div>
+    <Slider />
+  </div>
 </template>
 
 <script>
+import Slider from "@/components/home/Slider";
 export default {
   name: "Home",
+  components: {
+    Slider,
+  },
 };
 </script>
