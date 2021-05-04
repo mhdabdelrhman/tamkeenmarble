@@ -7,11 +7,11 @@
           <div class="logo">
             <!-- logo-1 -->
             <a href="index.html" class="big-logo"
-              ><img src="assets/img/logo/logo-picc.png" alt=""
+              ><img src="media/img/logo/logo-picc.png" alt=""
             /></a>
             <!-- logo-2 -->
             <a href="index.html" class="small-logo"
-              ><img src="assets/img/logo/logo-picc.png" alt=""
+              ><img src="media/img/logo/logo-picc.png" alt=""
             /></a>
           </div>
         </div>
@@ -34,10 +34,22 @@
   </div>
 </template>
 <script>
+import $ from "jquery";
+import "slicknav/jquery.slicknav";
 import MenuItems from "./MenuItems";
 export default {
   components: {
     MenuItems,
+  },
+  mounted() {
+    var menu = $("ul#navigation");
+    if (menu.length) {
+      menu.slicknav({
+        prependTo: ".mobile_menu",
+        closedSymbol: "+",
+        openedSymbol: "-",
+      });
+    }
   },
 };
 </script>

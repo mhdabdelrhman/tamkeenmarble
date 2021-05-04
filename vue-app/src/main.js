@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import i18n from "./core/plugins/vue-i18n";
+window.$ = window.jQuery = require('jquery');
 
 createApp(App)
   .use(router)
