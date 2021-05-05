@@ -15,7 +15,7 @@
 </template>
 <script>
 import $ from "jquery";
-
+import "@/assets/css/themify-icons.css";
 import "slicknav/dist/slicknav.css";
 import "animate.css";
 import "slick-carousel/slick/slick.css";
@@ -27,10 +27,16 @@ export default {
     };
   },
   mounted() {
-    $("#preloader-active").delay(450).fadeOut("slow");
-    $("body").delay(450).css({
-      overflow: "visible",
-    });
+    this.hideLoader();
+  },
+  methods: {
+    hideLoader() {
+      const time = 1000;
+      $("#preloader-active").delay(time).fadeOut("slow");
+      $("body").delay(time).css({
+        overflow: "visible",
+      });
+    },
   },
 };
 </script>

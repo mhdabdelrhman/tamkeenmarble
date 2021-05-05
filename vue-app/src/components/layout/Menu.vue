@@ -50,20 +50,31 @@ export default {
         openedSymbol: "-",
       });
     }
+
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+      if (scroll < 245) {
+        $(".header-sticky").removeClass("sticky-bar");
+        $(".header-sticky").removeClass("sticky");
+      } else {
+        $(".header-sticky").addClass("sticky-bar");
+        $(".header-sticky").addClass("sticky");
+      }
+    });
   },
 };
 </script>
 <style>
 .slicknav_btn {
-    background-color: transparent !important;    
-    margin-bottom: -25px;
-    z-index: 99;     
-    margin-top: -5px;
+  background-color: transparent !important;
+  margin-bottom: -25px;
+  z-index: 99;
+  margin-top: -5px;
 }
 .slicknav_menutxt {
   display: none !important;
 }
-.slicknav_icon-bar{
+.slicknav_icon-bar {
   font-size: 1.5rem;
 }
 </style>

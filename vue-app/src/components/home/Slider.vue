@@ -1,42 +1,43 @@
 <template>
   <!-- slider Area Start-->
-  <div class="slider-area">
-    <div class="slider-active">
-      <div
-        v-for="slide in slides"
-        :key="slide.id"
-        class="single-slider hero-overly slider-height d-flex align-items-center"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-11">
-              <div class="hero__caption">
-                <div class="hero-text1">
-                  <span data-animation="fadeInUp" data-delay=".3s"
-                    >{{slide.header.text}}</span
-                  >
-                </div>
-                <h1 data-animation="fadeInUp" data-delay=".5s">{{slide.title}}</h1>
-                <div
-                  class="stock-text"
-                  data-animation="fadeInUp"
-                  data-delay=".8s"
-                >
-                  <h2>{{slide.subtitle}}</h2>
-                  <h2>{{slide.subtitle}}</h2>
-                </div>
-                <div
-                  class="hero-text2 mt-110"
-                  data-animation="fadeInUp"
-                  data-delay=".9s"
-                >
-                  <span><a href="#">{{slide.footer.text}}</a></span>
-                </div>
+  <div class="slider-active">
+    <div
+      v-for="{ id, header, title, subtitle, footer, image } in slides"
+      :key="id"
+      class="single-slider hero-overly slider-height d-flex align-items-center"
+      :data-background="image"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-11">
+            <div class="hero__caption">
+              <div class="hero-text1">
+                <span data-animation="fadeInUp" data-delay=".3s">
+                  {{ header.text }}
+                </span>
+              </div>
+              <h1 data-animation="fadeInUp" data-delay=".5s">{{ title }}</h1>
+              <div
+                class="stock-text"
+                data-animation="fadeInUp"
+                data-delay=".8s"
+              >
+                <h2>{{ subtitle }}</h2>
+                <h2>{{ subtitle }}</h2>
+              </div>
+              <div
+                class="hero-text2 mt-110"
+                data-animation="fadeInUp"
+                data-delay=".9s"
+              >
+                <span>
+                  <a href="#">{{ footer.text }}</a>
+                </span>
               </div>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
   </div>
   <!-- slider Area End-->
@@ -44,6 +45,8 @@
 <script>
 import $ from "jquery";
 import "slick-carousel/slick/slick";
+
+import layoutServices from "@/core/services/layout.service";
 
 export default {
   data() {
@@ -55,6 +58,7 @@ export default {
           title: "TAMKEEN",
           subtitle: "MARBLE",
           footer: { text: "Our Services", to: { name: "services" } },
+          image: "media/img/hero/h1_marble.jpg",
         },
         {
           id: 2,
@@ -62,6 +66,7 @@ export default {
           title: "TAMKEEN",
           subtitle: "STONE",
           footer: { text: "Our Services", to: { name: "services" } },
+          image: "media/img/hero/h2_stone.jpg",
         },
       ],
     };
@@ -71,26 +76,18 @@ export default {
       "[data-animation]"
     );
     this.doAnimations($firstAnimatingElements);
+    this.setBackgroundImages();
     this.mainSlider();
+
+    $(window).on(
+      "resize",
+      function () {
+        this.setBackgroundImages();
+      }.bind(this)
+    );
   },
   methods: {
-    doAnimations(elements) {
-      var animationEndEvents =
-        "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-      elements.each(function () {
-        var $this = $(this);
-        var $animationDelay = $this.data("delay");
-        var $animationType = "animated " + $this.data("animation");
-        $this.css({
-          "animation-delay": $animationDelay,
-          "-webkit-animation-delay": $animationDelay,
-        });
-        $this.addClass($animationType).one(animationEndEvents, function () {
-          $this.removeClass($animationType);
-        });
-      });
-    },
-
+    ...layoutServices,
     mainSlider() {
       var slf = this;
       var BasicSlider = $(".slider-active");
@@ -137,11 +134,3 @@ export default {
   },
 };
 </script>
-<style>
-.slick-slide[data-slick-index="0"] {
-  background: url("/media/img/hero/h1_marble.jpg") no-repeat center / cover;
-}
-.slick-slide[data-slick-index="1"] {
-  background: url("/media/img/hero/h2_stone.jpg") no-repeat center / cover;
-}
-</style>
