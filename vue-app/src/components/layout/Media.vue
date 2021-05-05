@@ -76,18 +76,21 @@ export default {
 <style lang="scss">
 .media-float {
   position: fixed;
-  bottom: 35px;
-  left: 27px;
-  font-size: 30px;
-  z-index: 100;
+  bottom: 100px;
+  right: 31px;
+  font-size: 25px;
+  z-index: 2147483647;
+  @media (max-width: 575px) {
+    right: 16px;
+  }
   a {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     color: #fff;
     border-radius: 50px;
     text-align: center;
     i {
-      margin-top: 16px;
+      margin-top: 14px;
     }
   }
   .whatsapp {
