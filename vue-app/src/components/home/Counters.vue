@@ -72,7 +72,7 @@ export default {
         $(".counter").each(function () {
           var $this = $(this);
           var value = +$this.text();
-          const countUp = new CountUp($this.get(0), value, { duration: 3 });
+          const countUp = new CountUp($this.get(0), value, { duration: 5 });
 
           countUp.start();
         });

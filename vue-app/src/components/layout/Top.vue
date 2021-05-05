@@ -5,8 +5,8 @@
         <div class="row d-flex justify-content-between align-items-center">
           <div class="header-info-left">
             <ul>
-              <li>+(971) 55-956-7286</li>
-              <li>info@tamkeenmarble.ae</li>
+              <li>{{ getConfig("mobile") }}</li>
+              <li>{{ getConfig("email") }}</li>
               <!--<li>Mon - Sat 8:00 - 17:30, Sunday - CLOSED</li>-->
             </ul>
           </div>
@@ -14,8 +14,8 @@
             <ul class="header-social">
               <!--<li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
               <li>
-                <a href="https://www.facebook.com/tamkeen.marble"
-                  ><i class="fab fa-facebook-f"></i
+                <a :href="getConfig('facebook')"
+                  ><i class="fa fa-facebook-f"></i
                 ></a>
               </li>
               <!-- <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li> -->
@@ -28,5 +28,10 @@
   </div>
 </template>
 <script>
-export default {};
+import configService from "@/core/services/config.service";
+export default {
+  methods: {
+    ...configService,
+  },
+};
 </script>

@@ -4171,6 +4171,11 @@ follow-redirects@^1.0.0:
   resolved "https://registry.nlark.com/follow-redirects/download/follow-redirects-1.14.0.tgz?cache=0&sync_timestamp=1619369259591&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.14.0.tgz#f5d260f95c5f8c105894491feee5dc8993b402fe"
   integrity sha1-9dJg+VxfjBBYlEkf7uXciZO0Av4=
 
+font-awesome@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+  integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/for-in/download/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -5309,6 +5314,11 @@ jest-worker@^25.4.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery.scrollup@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/jquery.scrollup/-/jquery.scrollup-2.4.1.tgz#48b2841b9a997961d8ae722473e135153247857f"
+  integrity sha512-SwiSXW8tF7/L1T/6itD58aG6U5CdK6AfR66/v1kqndcsY+2aBN7n0/S5vmtAQUirkeuFAoYlwJ1fVGIQ8zisUw==
 
 jquery@>=1.7, jquery@^3.6.0:
   version "3.6.0"

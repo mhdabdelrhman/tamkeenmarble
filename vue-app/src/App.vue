@@ -19,6 +19,7 @@ import "@/assets/css/themify-icons.css";
 import "slicknav/dist/slicknav.css";
 import "animate.css";
 import "slick-carousel/slick/slick.css";
+import "font-awesome/css/font-awesome.css";
 
 export default {
   data() {
@@ -31,9 +32,9 @@ export default {
   },
   methods: {
     hideLoader() {
-      const time = 1000;
-      $("#preloader-active").delay(time).fadeOut("slow");
-      $("body").delay(time).css({
+      const loaderDelay = 1000;
+      $("#preloader-active").delay(loaderDelay).fadeOut("slow");
+      $("body").delay(loaderDelay).css({
         overflow: "visible",
       });
     },
