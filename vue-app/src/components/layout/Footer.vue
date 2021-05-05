@@ -70,14 +70,19 @@
         </div>
       </div>
     </div>
+    <Media />
   </div>
   <!-- Footer End-->
 </template>
 <script>
 import $ from "jquery";
+import Media from "./Media";
 import "jquery.scrollup/src/jquery.scrollUp";
 import configService from "@/core/services/config.service";
 export default {
+  components: {
+    Media,
+  },
   data() {
     return {
       year: new Date().getFullYear(),
