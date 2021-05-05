@@ -54,7 +54,7 @@ export default {
       slides: [
         {
           id: 1,
-          header: { text: "NATURE IN YOU HANDS" },
+          header: { text: "NATURE IN YOUR HANDS" },
           title: "TAMKEEN",
           subtitle: "MARBLE",
           footer: { text: "Our Services", to: { name: "services" } },
@@ -62,7 +62,7 @@ export default {
         },
         {
           id: 2,
-          header: { text: "NATURE IN YOU HANDS" },
+          header: { text: "NATURE IN YOUR HANDS" },
           title: "TAMKEEN",
           subtitle: "STONE",
           footer: { text: "Our Services", to: { name: "services" } },

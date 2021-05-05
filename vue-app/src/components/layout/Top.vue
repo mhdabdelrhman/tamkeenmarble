@@ -13,13 +13,9 @@
           <div class="header-info-right">
             <ul class="header-social">
               <!--<li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
-              <li>
-                <a :href="getConfig('facebook')"
-                  ><i class="fa fa-facebook-f"></i
-                ></a>
-              </li>
-              <!-- <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li> -->
-              <!-- <li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li> -->
+              <!--<li><a href="#"><i class="fa fa-facebook-f"></i></a></li>-->
+              <!--<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>-->
+              <!--<li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li>-->
             </ul>
           </div>
         </div>

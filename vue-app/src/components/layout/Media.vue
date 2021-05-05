@@ -1,37 +1,53 @@
 <template>
-  <a
-    :href="href"
-    v-show="visible"
-    class="wapp-float"
-    target="_blank"
-    data-animation="fadeInDown"
-    data-delay="0.1s"
+  <div
+    class="media-float d-none flex-column justefy-content-end align-items-center"
   >
-    <i class="fa fa-whatsapp my-float"></i>
-  </a>
+    <a
+      class="mt-2 whatsapp"
+      :href="whatsappHref"
+      target="_blank"
+      data-animation="fadeInDown"
+      data-delay="0.2s"
+    >
+      <i class="fa fa-whatsapp"></i>
+    </a>
+    <a
+      class="mt-2 facebook"
+      :href="facebookHref"
+      target="_blank"
+      data-animation="fadeInDown"
+      data-delay="0.1s"
+    >
+      <i class="fa fa-facebook-f"></i>
+    </a>
+  </div>
 </template>
 <script>
 import $ from "jquery";
 import layoutServices from "@/core/services/layout.service";
+import configService from "@/core/services/config.service";
 
 export default {
   data() {
     return {
       message: true,
-      phone: "00905312029584",
       text: "Hello!",
       visible: false,
     };
   },
   computed: {
-    href() {
-      let href = "https://api.whatsapp.com/send?phone=";
-      href += this.phone;
+    whatsappHref() {
+      let link = configService.getConfig("whatsapp-link");
       if (this.message && this.text) {
-        href += "&text=";
-        href += encodeURI(this.text);
+        link += "&text=";
+        link += encodeURI(this.text);
       }
-      return href;
+      return link;
+    },
+
+    facebookHref() {
+      let link = configService.getConfig("facebook-link");
+      return link;
     },
   },
   mounted() {
@@ -40,10 +56,14 @@ export default {
       var scroll = $(window).scrollTop();
       if (scroll < 245) {
         slf.visible = false;
+        $(".media-float").removeClass("d-flex");
+        $(".media-float").addClass("d-none");
       } else {
         if (slf.visible) return;
         slf.visible = true;
-        var $animatingElements = $(".wapp-float[data-animation]");
+        $(".media-float").removeClass("d-none");
+        $(".media-float").addClass("d-flex");
+        var $animatingElements = $(".media-float").find("[data-animation]");
         slf.doAnimations($animatingElements);
       }
     });
@@ -53,23 +73,28 @@ export default {
   },
 };
 </script>
-<style>
-.wapp-float {
+<style lang="scss">
+.media-float {
   position: fixed;
-  width: 60px;
-  height: 60px;
   bottom: 35px;
   left: 27px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
   font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
   z-index: 100;
-}
-
-.my-float {
-  margin-top: 16px;
+  a {
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    i {
+      margin-top: 16px;
+    }
+  }
+  .whatsapp {
+    background-color: #25d366;
+  }
+  .facebook {
+    background-color: #0c4191;
+  }
 }
 </style>
